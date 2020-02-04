@@ -25,8 +25,14 @@ Inicialmente podemos pensar em dividir a esfera em 256 partes, que é um número
 
 Dentre diversas estratégias teríamos duas situações para pensar o algorítimo:
 
+* Gerar um raster a partir do MDS com cerca de 1 metro de resolução; e calcular um HillShade para cada uma das 256 faces da semi esfera, calculando seu azimuth e altura.
 * A partir de cada ponto no ground MDT, criar 256 sólidos, sendo um para cada área da semi esfera, e contar quantos desses sólidos intersectam algum ponto.
-* Gerar um raster DEM a partir do MDS com cerca de 1 metro de resolução; e calcular um HillShade para cada uma das 256 faces da semi esfera, calculando seu azimuth e altura.
+
+## Gerando um raster a partir do MDS
+
+Para testar uma das possibilidades, vamos criar um raster com um metro de resolução a partir do MDS LiDAR. Para isso vamos usar a biblioteca PDAL, utilizando o seguinte comando:
+
+`pdal pipeline arquivos/MDS_1metro.json`
 
 ## Contribuições
 
