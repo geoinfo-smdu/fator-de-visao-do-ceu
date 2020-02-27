@@ -34,6 +34,21 @@ Para testar uma das possibilidades, vamos criar um raster com um metro de resolu
 
 `pdal pipeline arquivos/MDS_1metro.json`
 
+## Pseudo código
+
+```
+definir um valor de esfera ideal
+
+a partir de cada pixel da imagem raster
+    iterar 16 vezes dispararando uma linha do tamanho do raio da esfera para cada angulo (360 / 16)
+        calcular o 'slope' (declividade)
+        atribuir o percentual de céu visível a partir da declividade máxima, usando as fórmulas da colota esférica e da zona esférica
+        atribuir peso de 1/16 sobre esse valor e
+
+gravar cada informação dessa no pixel devido
+gerar o raster de fator de visão de céu
+```
+
 ## Contribuições
 
 As contribuições são muito bem vindas, estimulam a cidadania e contribuem para a compreensão da cidade e podem ensejar uma discussão técnica sobre o planejamento urbano.
